@@ -3,12 +3,7 @@ import Preview from '../Preview/Preview';
 
 import makeHttpRequest, { API_TYPE } from '../../Api/api';
 import { getUrlFromString } from '../../utils/util';
-
-const inptStyl = {
-    'margin-bottom': '1rem',
-    border: '1px solid grey',
-    'border-radius': '1rem'
-}
+import './App.css';
 
 class App extends React.Component {
 
@@ -40,7 +35,7 @@ class App extends React.Component {
         const { text, preview } = this.state;
         return (
             <div>
-                <input type="text" placeholder="Enter text here" onChange={this.onChangeInput} value={text} style={inptStyl} />
+                <input type="text" placeholder="Enter text here" className="inpt-styl" onChange={this.onChangeInput} value={text} />
                 { Object.keys(preview).length ? <Preview data={preview}/> : null }
             </div>
         )
